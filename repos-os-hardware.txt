@@ -1,0 +1,33 @@
+# Open source hardware projects
+# openinverter.org, Voron Design, and V1 Engineering (MPCNC / LowRider)
+
+# ============================================================
+# openinverter.org / Huebner inverter (EV motor control)
+# ============================================================
+jsphuebner/stm32-sine                 # Main inverter firmware
+jsphuebner/inverter-hardware          # Original hardware (Eagle schematics)
+jsphuebner/libopeninv                 # Shared library
+jsphuebner/esp8266-web-interface      # Classic web UI
+jsphuebner/stm32-charger              # Charger firmware on same hardware
+jsphuebner/stm32-island               # Island / off-grid inverter mode
+davefiddes/openinverter-can-tool      # CAN configuration & control tool
+
+# ============================================================
+# Voron Design (CoreXY 3D printers)
+# ============================================================
+VoronDesign/Voron-Trident             # Trident (including R2)
+VoronDesign/Voron-2                   # Voron 2.4
+VoronDesign/Voron-0                   # Voron 0
+VoronDesign/Voron-Stealthburner       # Stealthburner toolhead
+VoronDesign/VoronUsers                # Community mods collection
+VoronDesign/Voron-Hardware            # Shared hardware / electronics files
+
+# ============================================================
+# V1 Engineering – MPCNC / LowRider CNC
+# ============================================================
+V1EngineeringInc/MPCNC_Primo          # Current MPCNC Primo design
+V1EngineeringInc/MPCNC_Primo_Tool_Mounts
+V1EngineeringInc/V1EngineeringInc-Docs  # Main documentation (docs.v1e.com)
+V1EngineeringInc/FluidNC_Configs      # FluidNC configs for V1 boards
+V1EngineeringInc/MarlinBuilder        # Pre-configured Marlin builds
+
