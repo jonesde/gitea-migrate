@@ -1,0 +1,145 @@
+# JavaScript / Node / browser stack
+# npm tooling, Vue/Vite apps (lol-ya-tdg style), physics/nav, Three.js ecosystem,
+# and Moqui runtime vendor JS libraries
+#
+# Purpose: offline Gitea mirror + local reference for AI coding agents
+#
+# Formats: owner/repo (GitHub) | https://host/owner/repo | https://host/owner/repo.git
+#
+# Size notes (approximate, full history):
+#   Larger: nodejs/node, mrdoob/three.js, microsoft/TypeScript, oven-sh/bun
+#   Most others are small-to-medium library repos
+#
+# Rapier: 2D and 3D share one upstream (dimforge/rapier). Official JS bindings
+# live in that tree (typescript/); npm packages @dimforge/rapier2d, rapier3d,
+# and *-compat are build artifacts, not separate source roots.
+# Old dimforge/rapier.js was merged into dimforge/rapier.
+#
+# Three.js: controls, loaders, and most "addons" live inside mrdoob/three.js
+# (examples/jsm → import from 'three/addons/...'). No need to mirror those
+# as separate repos for baseline use.
+
+# ============================================================
+# Package managers & JS runtimes / core toolchain
+# ============================================================
+npm/cli                              # npm CLI (classic Node package manager)
+yarnpkg/berry                        # Yarn modern (Berry / Yarn 2+)
+pnpm/pnpm                            # pnpm (content-addressable, disk-efficient)
+oven-sh/bun                          # Bun runtime + package manager (larger)
+nodejs/node                          # Node.js itself (large; optional if you only need libs)
+microsoft/TypeScript                 # TypeScript compiler (moderately large)
+
+# ============================================================
+# Build / test / lint — modern Vue + Vite stack (lol-ya-tdg)
+# ============================================================
+vitejs/vite                          # Vite bundler / dev server (HMR, code split)
+vitejs/vite-plugin-vue               # Official Vue plugin for Vite
+vitest-dev/vitest                    # Vitest (Vite-native test runner)
+biomejs/biome                        # Biome linter + formatter (biome.json workflows)
+vuejs/core                           # Vue 3 core
+vuejs/router                         # Vue Router 4
+vuejs/pinia                          # Pinia state management
+vuejs/test-utils                     # @vue/test-utils for component tests
+colinhacks/zod                       # Zod schema validation
+jsdom/jsdom                          # jsdom environment (Vitest / unit tests)
+
+# Vue 2 still appears in Moqui runtime CDN set; Quasar is used there and
+# in other Vue app work outside pure lol-ya-tdg
+vuejs/vue                            # Vue 2 (legacy / Moqui-shipped line)
+quasarframework/quasar               # Quasar UI framework (Vue)
+
+# ============================================================
+# Physics & navigation
+# ============================================================
+dimforge/rapier                      # Rapier 2D + 3D physics (Rust + official JS/TS)
+                                     # npm: @dimforge/rapier2d, @dimforge/rapier3d,
+                                     #      @dimforge/rapier2d-compat, rapier3d-compat
+                                     # lol-ya-tdg uses @dimforge/rapier2d-compat
+isaac-mason/recast-navigation-js     # WASM/JS port published as npm "recast-navigation"
+                                     # (lol-ya-tdg dependency)
+recastnavigation/recastnavigation    # Upstream Recast/Detour C++ (navmesh reference)
+
+# Optional alternate physics still seen with Three.js demos
+pmndrs/cannon-es                     # cannon-es (JS physics; older Three demos)
+
+# ============================================================
+# Three.js core + high-value companions (games / sim / viz)
+# ============================================================
+mrdoob/three.js                      # Three.js core + examples/jsm addons
+                                     # OrbitControls, GLTFLoader, DRACOLoader, etc. live here
+                                     # (larger repo — expected)
+
+# Spatial queries / geometry / performance
+gkjohnson/three-mesh-bvh             # BVH for fast raycasting & spatial queries (very common)
+gkjohnson/three-bvh-csg              # Constructive solid geometry on three-mesh-bvh
+
+# Post-processing / effects
+pmndrs/postprocessing                # Postprocessing stack (vanilla + R3F-friendly)
+
+# Animation / debug UI often paired with Three
+tweenjs/tween.js                     # Tween animations
+georgealways/lil-gui                 # Debug GUI (Three examples use this)
+mrdoob/stats.js                      # FPS / ms performance panel
+
+# Optional React-Three Fiber stack (only if you adopt R3F; skip for Vue/vanilla)
+# pmndrs/react-three-fiber
+# pmndrs/drei
+# pmndrs/react-three-rapier
+
+# ============================================================
+# Moqui runtime JS/CSS libraries
+# From moqui-runtime base-component/webroot/build.gradle CDN/fileMap set.
+# Moqui vendors minified builds; mirroring upstream git is still useful for
+# offline reading, diffs, upgrades, and agent context.
+# ============================================================
+jquery/jquery                        # jQuery
+twbs/bootstrap                       # Bootstrap (Moqui historically on 3.x line)
+moment/moment                        # moment.js (Moqui uses with-locales build)
+select2/select2                      # Select2 enhanced selects
+select2/select2-bootstrap-theme      # Select2 Bootstrap theme
+vakata/jstree                        # jsTree
+jquery-form/form                     # jquery.form
+RobinHerbots/Inputmask               # Inputmask / jquery.inputmask
+jquery-validation/jquery-validation  # jquery.validate + additional-methods
+Eonasdan/bootstrap-datetimepicker    # Bootstrap datetime picker
+mouse0270/bootstrap-notify           # Bootstrap notify toasts
+FortAwesome/Font-Awesome             # Font Awesome (Moqui on 4.x-era assets)
+twitter/typeahead.js                 # typeahead.js autocomplete
+
+# Older / less central Moqui-adjacent pieces (include for completeness)
+DiegoSalazar/jquery-jeditable        # jeditable inline edit (verify maintained fork if needed)
+arendjr/selectivity                  # Selectivity.js
+tildeio/rsvp.js                      # RSVP promises (legacy promise helper)
+
+# Vue 2 + Quasar listed in the Vue section above (Moqui ships both via CDN)
+
+# ============================================================
+# Optional extras sometimes useful for sims / games / viz
+# ============================================================
+# immersive-web/webxr                # WebXR references if you do XR later
+# Mottie/tablesorter                 # tablesorter (older admin UI pattern)
+
+# ============================================================
+# Explicitly not separate repos (covered above)
+# ============================================================
+# - Rapier 2D vs 3D: same dimforge/rapier tree
+# - Three.js OrbitControls / GLTFLoader / FBXLoader / DRACOLoader / etc.:
+#     inside mrdoob/three.js (examples/jsm)
+# - Vite / Vitest / Pinia / Vue Router / Zod / Rapier-compat / recast-navigation:
+#     listed as their upstream source repos (not npm tarball mirrors)
+# - Node/npm lockfiles and node_modules: do not mirror; clone sources instead
+
+# ============================================================
+# WASM / bindings toolchain + Rapier foundations
+# ============================================================
+# Rapier JS bindings are in dimforge/rapier (typescript/); these support
+# rebuilding WASM packages and understanding the physics stack.
+
+dimforge/nalgebra                    # Linear algebra used by Rapier
+dimforge/parry                       # Collision-detection used by Rapier
+
+wasm-bindgen/wasm-bindgen            # Rust ↔ JavaScript bindings
+wasm-bindgen/wasm-pack               # Build/publish Rust WASM as JS packages
+WebAssembly/binaryen                 # wasm-opt / WASM optimization
+WebAssembly/wabt                     # WebAssembly binary toolkit
+emscripten-core/emscripten           # C/C++ → WASM (Emscripten)
