@@ -1,0 +1,116 @@
+# Linux apps & utilities — gap-fillers for the wider archive
+# Containers (Docker CE stack), media, SQLite, monitoring, diagnostics,
+# backup/sync, and everyday CLI tools
+#
+# Purpose: offline Gitea mirror + local reference for AI coding agents
+#
+# Formats: owner/repo (GitHub) | https://host/owner/repo | https://host/owner/repo.git
+#
+# Notes:
+#   - Docker CE is assembled from Moby + CLI + containerd + runc (+ BuildKit/Compose)
+#   - FFmpeg official canonical remote is git.ffmpeg.org; GitHub mirror is fine for archiving
+#   - SQLite canonical SCM is Fossil; sqlite/sqlite is the official git mirror
+#   - Monitoring split that works well in 2026:
+#       Glances  = plugin/API breadth (containers, sensors, GPU, remote)
+#       btop     = modern interactive TUI
+#       nvtop    = cross-vendor GPU process monitor
+#       LACT     = GPU tuning GUI (clocks, fans, power) for AMD/NVIDIA/Intel
+
+# ============================================================
+# Containers — Docker CE / OCI stack
+# ============================================================
+moby/moby                               # Moby engine (Docker CE upstream components)
+docker/cli                              # Docker CLI client
+docker/compose                          # Docker Compose
+containerd/containerd                   # Container runtime (Docker default)
+opencontainers/runc                     # OCI runtime (runc)
+moby/buildkit                           # BuildKit image builder
+containers/podman                       # optional daemonless alternative
+containers/buildah                      # optional image build (Podman ecosystem)
+containers/skopeo                       # optional image copy/inspect
+
+# ============================================================
+# Media
+# ============================================================
+FFmpeg/FFmpeg                           # FFmpeg (GitHub mirror of git.ffmpeg.org)
+mpv-player/mpv                          # Command-line media player
+gstreamer/gstreamer                     # GStreamer multimedia framework
+ImageMagick/ImageMagick                 # Still-image conversion / processing
+
+# ============================================================
+# Data stores (complements Postgres set)
+# ============================================================
+sqlite/sqlite                           # SQLite official git mirror (embedded DB)
+redis/redis                             # Redis in-memory data store / cache
+
+# ============================================================
+# Virtualization
+# ============================================================
+qemu/qemu                               # QEMU emulator / virtualizer (larger)
+libvirt/libvirt                         # libvirt virtualization API / tooling
+
+# ============================================================
+# Utilization monitoring (CPU/mem/disk/net + plugins)
+# ============================================================
+nicolargo/glances                       # Glances — best plugin/API breadth
+                                        # (containers, sensors, GPU hooks, web/API, remote)
+aristocratos/btop                       # btop — modern full-color interactive TUI
+htop-dev/htop                           # htop — classic baseline process monitor
+
+# ============================================================
+# GPU monitoring and tuning
+# ============================================================
+Syllo/nvtop                             # nvtop — cross-vendor GPU process monitor
+                                        # (NVIDIA, AMD, Intel, and other accelerators)
+ilya-zlobintsev/LACT                    # LACT — GPU configuration & monitoring GUI
+                                        # (clocks, fans, power; AMD / NVIDIA / Intel)
+# Vendor CLIs (nvidia-smi, rocm-smi, etc.) remain useful for deep debugging
+# but are not separate general-purpose open projects in the same way.
+
+# ============================================================
+# System diagnostics
+# ============================================================
+strace/strace                           # System call tracer
+lsof-org/lsof                           # List open files / sockets
+bpftrace/bpftrace                       # optional deeper dynamic tracing (BPF)
+procps-ng/procps                        # ps, free, top family (if not from distro tree)
+util-linux/util-linux                   # often already in desktop/linux sets
+
+# ============================================================
+# Network / “wire” diagnostics
+# ============================================================
+curl/curl                               # HTTP/transfer Swiss army knife
+nmap/nmap                               # Network discovery / port scanning
+the-tcpdump-group/tcpdump               # Packet capture (libpcap CLI)
+wireshark/wireshark                     # Wireshark + tshark
+openssh/openssh-portable                # OpenSSH client/server
+# iproute2: canonical hosting varies; common mirrors include
+#   https://git.kernel.org/pub/scm/network/iproute2/iproute2.git
+# Include full https URL in the list if your clone script accepts non-GitHub remotes.
+
+# ============================================================
+# Backup / sync
+# ============================================================
+restic/restic                           # Encrypted deduplicated backups
+borgbackup/borg                         # BorgBackup
+rclone/rclone                           # Cloud/remote sync Swiss army knife
+
+# ============================================================
+# Everyday CLI multipliers
+# ============================================================
+BurntSushi/ripgrep                      # ripgrep (rg) — fast recursive search
+sharkdp/fd                              # fd — user-friendly find alternative
+jqlang/jq                               # jq — JSON processor
+facebook/zstd                           # Zstandard compression
+neovim/neovim                           # Neovim editor
+tmux/tmux                               # Terminal multiplexer
+# vim/vim                               # optional classic Vim if preferred over Neovim
+
+# ============================================================
+# Size / priority notes
+# ============================================================
+# Larger: qemu/qemu, moby/moby, gstreamer/gstreamer, FFmpeg/FFmpeg, wireshark/wireshark
+# Keep if offline builds matter; otherwise these are the first to shallow-clone.
+#
+# Recommended default monitoring set on a workstation:
+#   glances (overview + plugins) + btop (interactive) + nvtop (GPU) + LACT (GPU tune)
