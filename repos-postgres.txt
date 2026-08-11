@@ -1,0 +1,26 @@
+# PostgreSQL core
+postgres/postgres
+
+# Language client libraries
+pgjdbc/pgjdbc
+psycopg/psycopg
+psycopg/psycopg2
+jackc/pgx
+brianc/node-postgres
+npgsql/npgsql
+sfackler/rust-postgres
+
+# Extensions
+pgvector/pgvector
+postgis/postgis
+timescale/timescaledb
+citusdata/citus
+pgpartman/pg_partman
+reorg/pg_repack
+citusdata/pg_cron
+pgaudit/pgaudit
+pgroonga/pgroonga
+zombodb/zombodb
+PostgREST/postgrest
+apache/age
+

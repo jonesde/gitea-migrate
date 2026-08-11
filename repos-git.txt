@@ -1,0 +1,7 @@
+# Git ecosystem
+git/git
+git/git-scm.com
+progit/progit2
+libgit2/libgit2
+go-gitea/gitea
+
