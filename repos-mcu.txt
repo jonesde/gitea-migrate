@@ -57,6 +57,8 @@ platformio/platformio-core            # PlatformIO core (handy for offline work)
 # Flashing & low-level tools
 # ============================================================
 openocd-org/openocd                   # JTAG/SWD debug & flash
-https://git.code.sf.net/p/dfu-util/dfu-util
-https://git.code.sf.net/p/stm32flash/code
+# Upstream: https://git.code.sf.net/p/dfu-util/dfu-util
+Stefan-Schmidt/dfu-util
+# Upstream: https://git.code.sf.net/p/stm32flash/code
+https://gitlab.com/stm32flash/stm32flash.git
 

@@ -8,8 +8,9 @@ Usage:
   gitea-migrate.py REPOS_FILE
 
 REPOS_FILE is a text file with one entry per line:
-  owner/repo                  — GitHub (https://github.com/owner/repo.git)
-  https://host/owner/repo     — arbitrary host (optional trailing .git)
+  owner/repo                           — GitHub (https://github.com/owner/repo.git)
+  https://host/owner/repo              — arbitrary host (optional trailing .git)
+  https://host/group/sub/repo[.git]    — nested groups (e.g. GitLab); org=group, repo=last
 Blank lines and # comments are ignored. Paths are resolved relative to the
 current directory.
 """
@@ -62,6 +63,7 @@ def parse_repo_entry(line: str) -> tuple[str, str, str]:
       owner/repo
       https://host/owner/repo
       https://host/owner/repo.git
+      https://host/group/subgroup/repo[.git]  (nested; owner=first, repo=last)
     """
     if line.startswith("http://") or line.startswith("https://"):
         parsed = urlparse(line)
@@ -73,10 +75,12 @@ def parse_repo_entry(line: str) -> tuple[str, str, str]:
         if path.endswith(".git"):
             path = path[:-4]
         parts = [p for p in path.split("/") if p]
-        if len(parts) != 2:
-            raise ValueError(f"expected https://host/owner/repo, got: {line!r}")
-        owner, repo = parts
-        clone_addr = f"{parsed.scheme}://{parsed.netloc}/{owner}/{repo}.git"
+        if len(parts) < 2:
+            raise ValueError(
+                f"expected https://host/owner/repo or nested path, got: {line!r}"
+            )
+        owner, repo = parts[0], parts[-1]
+        clone_addr = f"{parsed.scheme}://{parsed.netloc}/{'/'.join(parts)}.git"
         return clone_addr, owner, repo
 
     if "/" not in line:
@@ -93,8 +97,9 @@ def load_repos(path: Path) -> list[tuple[str, str, str]]:
     """Load repo entries from a text file.
 
     Format per line:
-      owner/repo              — defaults to github.com
-      https://host/owner/repo — arbitrary host (optional .git)
+      owner/repo                         — defaults to github.com
+      https://host/owner/repo            — arbitrary host (optional .git)
+      https://host/group/sub/repo[.git]  — nested groups; org=group, repo=last
     Blank lines and # comments ignored. Trailing comments stripped.
     Returns list of (clone_addr, owner, repo).
     """
@@ -242,8 +247,9 @@ def main() -> None:
         ),
         epilog=(
             "REPOS_FILE format (one per line):\n"
-            "  owner/repo                  GitHub (default host)\n"
-            "  https://host/owner/repo     arbitrary host (optional .git)\n"
+            "  owner/repo                         GitHub (default host)\n"
+            "  https://host/owner/repo            arbitrary host (optional .git)\n"
+            "  https://host/group/sub/repo[.git]  nested (e.g. GitLab); org=group, repo=last\n"
             "Blank lines and # comments are ignored."
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -251,7 +257,7 @@ def main() -> None:
     parser.add_argument(
         "repos_file",
         type=Path,
-        help="text file listing repos as owner/repo or https://host/owner/repo",
+        help="text file listing repos as owner/repo or https://host/.../repo",
     )
     args = parser.parse_args()
 
