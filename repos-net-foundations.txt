@@ -89,7 +89,7 @@ rweather/noise-c                         # Noise Protocol Framework (C reference
 # L7 Application — HTTP, web platform, auth, DNS servers, …
 # ============================================================
 httpwg/http-core                         # HTTP semantics / core (9110-family lineage)
-httpwg/http2                             # HTTP/2
+httpwg/http2-spec                        # HTTP/2
 # HTTP/3 is bound to QUIC transport work (see L4 quicwg); HTTP mapping RFCs in corpus
 
 whatwg/html                              # HTML living standard
@@ -149,4 +149,3 @@ lightningdevkit/rust-lightning           # LDK / rust-lightning
 # [ ] IEEE 802.3 / 802.11 (and related) if normative L1/L2 text is required
 # [ ] Extra tlswg/* or oauth-wg/* drafts only when a concrete need appears
 # [ ] Extra quicwg/* extension repos as specific QUIC features are adopted
-
