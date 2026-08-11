@@ -5,7 +5,6 @@
 # ============================================================
 https://gitlab.gnome.org/GNOME/dia.git    # Dia diagram editor (upstream)
 # GNOME/dia                                # GitHub mirror of Dia
-zed-industries/zed                        # Zed editor
 # TOO BIG, needs special handling: chromium/chromium                         # Chromium (GitHub mirror; very large)
 # Official Chromium: https://chromium.googlesource.com/chromium/src
 
@@ -21,3 +20,125 @@ NousResearch/hermes-agent                 # Hermes agent (Nous Research)
 # ============================================================
 ggml-org/llama.cpp                        # llama.cpp
 vllm-project/vllm                         # vLLM
+
+# ============================================================
+# ============================================================
+# Zed editor + extensions
+# For offline mirror / Gitea archive and local AI-agent reference
+#
+# Built into Zed (no extension required for basic highlighting / editing):
+#   Markdown (+ preview; Mermaid diagrams render in preview as of 2026)
+#   YAML, XML, JSON, HTML, CSS
+#   JavaScript, TypeScript (incl. JSX/TSX)
+#   Python, Groovy, Makefile, Shell/Bash
+#   SQL (baseline), Dockerfile (baseline), TOML (baseline)
+#   C, C++, Go, Rust
+#   and others listed at https://zed.dev/languages
+#
+# Extensions below add LSP depth, framework support, lint/format,
+# themes, MCP, or stronger language tooling beyond those built-ins.
+#
+# Formats: owner/repo (GitHub) | https://host/owner/repo | https://host/owner/repo.git
+
+# ============================================================
+# Core
+# ============================================================
+zed-industries/zed                    # Zed editor itself (all built-in languages live here)
+zed-industries/extensions             # Central registry; submodules point at published extensions
+
+# ============================================================
+# Primary stack — JVM / Java / Gradle
+# ============================================================
+zed-extensions/java                   # Java via JDTLS + Gradle language server
+                                      # Covers .java, .properties, .gradle, .gradle.kts
+                                      # Built-in Java/Groovy highlighting alone is not enough
+                                      # for real Moqui / OFBiz / JVM work
+
+# ============================================================
+# Primary stack — Vue / web (matches lol-ya-tdg and similar apps)
+# ============================================================
+zed-extensions/vue                    # Vue 3 SFCs (.vue) — primary UI framework
+                                      # Covers Pinia / Vue Router projects as normal TS+Vue
+biomejs/biome-zed                     # Biome lint + format for JS/TS/JSON
+                                      # Matches biome.json / npm run lint|format workflows
+zed-extensions/emmet                  # Emmet expansions — HTML/CSS authoring speed
+zed-extensions/superhtml              # Stronger HTML diagnostics / tooling
+zed-extensions/toml                   # Stronger TOML (Cargo, many tool configs)
+zed-extensions/sql                    # Stronger SQL than bare built-in
+zed-extensions/dockerfile             # Stronger Dockerfile than bare built-in
+
+# ============================================================
+# Notes / Markdown (Obsidian-as-plain-files path)
+# ============================================================
+# Mermaid inside Markdown preview is built into Zed (fenced ```mermaid blocks).
+# The Mermaid extension is for language support and editing standalone .mmd files.
+gabeidx/zed-mermaid                   # Mermaid syntax / .mmd files (marketplace: Mermaid)
+zed-extensions/harper                 # Harper LS — grammar / spellcheck for prose + Markdown
+
+# ============================================================
+# Shaders / graphics (when moving beyond pure SVG)
+# ============================================================
+# Install "GLSL" from Zed extensions UI if submodule URL is unclear when mirroring;
+# it is registered in zed-industries/extensions (marketplace: GLSL).
+# Useful for Three.js / WebGL / custom shader work later.
+
+# ============================================================
+# Web frameworks beyond Vue (light coverage)
+# ============================================================
+zed-extensions/svelte                 # Svelte
+zed-extensions/astro                  # Astro
+zed-extensions/deno                   # Deno runtime / tooling
+zed-extensions/tsgo                   # Extra TypeScript-oriented tooling
+
+# ============================================================
+# Infra / data / systems (aligned with other archive sets)
+# ============================================================
+zed-extensions/terraform              # Terraform / HCL
+zed-extensions/postgres-context-server  # Postgres MCP / context server
+zed-extensions/nix                    # Nix language
+zed-extensions/powershell             # PowerShell
+zed-extensions/nginx                  # Nginx config highlighting
+zed-extensions/log                    # Log file syntax highlighting
+zed-extensions/golangci-lint          # golangci-lint integration
+zed-extensions/git_firefly            # Git-oriented syntax highlighting
+zed-extensions/pyrefly                # Stronger Python LSP path in Zed
+# rgbkrk/python-lsp-zed-extension     # Alternative explicit pylsp extension (optional)
+
+# ============================================================
+# Other useful languages (trim if archive size becomes a concern)
+# ============================================================
+zed-extensions/ruby
+zed-extensions/php
+zed-extensions/kotlin
+zed-extensions/swift
+zed-extensions/csharp
+zed-extensions/dart
+zed-extensions/elixir
+zed-extensions/lua
+zed-extensions/zig
+zed-extensions/haskell
+zed-extensions/ocaml
+zed-extensions/clojure
+zed-extensions/prisma
+zed-extensions/typst
+zed-extensions/nu                     # Nushell
+
+# ============================================================
+# Themes / icons
+# ============================================================
+zed-extensions/material-icon-theme
+zed-extensions/legacy-themes
+# Add favorite theme repos from the registry as desired (e.g. Catppuccin)
+
+# ============================================================
+# MCP / agent-adjacent
+# ============================================================
+zed-extensions/mcp-server-brave-search
+zed-extensions/mcp-server-puppeteer
+
+# ============================================================
+# Explicitly NOT needed as Zed extensions (for this archive)
+# ============================================================
+# - FreeMarker (.ftl): weak ecosystem; fall back to XML/HTML highlighting
+# - Full Obsidian graph/plugin model: out of scope; plain Markdown files +
+#     built-in preview (+ Mermaid + Harper) is the intended path
