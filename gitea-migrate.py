@@ -9,6 +9,7 @@ Usage:
 
 REPOS_FILE is a text file with one entry per line:
   owner/repo                           — GitHub (https://github.com/owner/repo.git)
+  owner/repo https://clone/url.git     — Gitea owner/repo with custom clone URL
   https://host/owner/repo              — arbitrary host (optional trailing .git)
   https://host/group/sub/repo[.git]    — nested groups (e.g. GitLab); org=group, repo=last
 Blank lines and # comments are ignored. Paths are resolved relative to the
@@ -61,10 +62,32 @@ def parse_repo_entry(line: str) -> tuple[str, str, str]:
 
     Accepts:
       owner/repo
+      owner/repo https://clone.host/path/repo.git  (Gitea owner/repo + custom clone URL)
       https://host/owner/repo
       https://host/owner/repo.git
       https://host/group/subgroup/repo[.git]  (nested; owner=first, repo=last)
     """
+    # owner/repo <clone-url> — place under owner/repo, clone from URL
+    parts_ws = line.split(None, 1)
+    if (
+        len(parts_ws) == 2
+        and not parts_ws[0].startswith("http://")
+        and not parts_ws[0].startswith("https://")
+        and (parts_ws[1].startswith("http://") or parts_ws[1].startswith("https://"))
+    ):
+        owner_repo, clone_addr = parts_ws[0], parts_ws[1].rstrip("/")
+        if clone_addr.endswith(".git"):
+            pass
+        else:
+            clone_addr = clone_addr + ".git"
+        if "/" not in owner_repo:
+            raise ValueError(f"expected owner/repo before clone URL, got: {line!r}")
+        owner, repo = owner_repo.split("/", 1)
+        owner, repo = owner.strip(), repo.strip()
+        if not owner or not repo or "/" in repo:
+            raise ValueError(f"expected owner/repo before clone URL, got: {line!r}")
+        return clone_addr, owner, repo
+
     if line.startswith("http://") or line.startswith("https://"):
         parsed = urlparse(line)
         if not parsed.scheme or not parsed.netloc:
@@ -98,6 +121,7 @@ def load_repos(path: Path) -> list[tuple[str, str, str]]:
 
     Format per line:
       owner/repo                         — defaults to github.com
+      owner/repo https://clone/url.git   — Gitea owner/repo + custom clone URL
       https://host/owner/repo            — arbitrary host (optional .git)
       https://host/group/sub/repo[.git]  — nested groups; org=group, repo=last
     Blank lines and # comments ignored. Trailing comments stripped.
@@ -131,7 +155,7 @@ def load_repos(path: Path) -> list[tuple[str, str, str]]:
 def gitea(path: str, method: str = "GET", **kwargs) -> dict | None:
     """Make a Gitea API call. Returns None on 404, raises on other errors."""
     # Large repos need longer timeouts for migration
-    timeout = kwargs.pop("timeout", 120 if method != "POST" else 1800)
+    timeout = kwargs.pop("timeout", 120 if method != "POST" else 3600)
     resp = requests.request(
         method,
         f"{GITEA_URL}/api/v1{path}",
@@ -248,6 +272,7 @@ def main() -> None:
         epilog=(
             "REPOS_FILE format (one per line):\n"
             "  owner/repo                         GitHub (default host)\n"
+            "  owner/repo https://clone/url.git   Gitea owner/repo + custom clone URL\n"
             "  https://host/owner/repo            arbitrary host (optional .git)\n"
             "  https://host/group/sub/repo[.git]  nested (e.g. GitLab); org=group, repo=last\n"
             "Blank lines and # comments are ignored."

@@ -121,7 +121,7 @@ FortAwesome/Font-Awesome             # Font Awesome (Moqui on 4.x-era assets)
 twitter/typeahead.js                 # typeahead.js autocomplete
 
 # Older / less central Moqui-adjacent pieces (include for completeness)
-DiegoSalazar/jquery-jeditable        # jeditable inline edit (verify maintained fork if needed)
+NicolasCARPi/jquery_jeditable         # jeditable inline edit (maintained fork)
 arendjr/selectivity                  # Selectivity.js
 tildeio/rsvp.js                      # RSVP promises (legacy promise helper)
 

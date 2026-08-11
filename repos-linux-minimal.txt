@@ -72,7 +72,7 @@ moby/moby
 # Official is gcc.gnu.org; convenient mirrors exist, e.g.:
 gcc-mirror/gcc
 # Binutils (+ GDB)
-bminor/binutils-gdb
+bminor/binutils-gdb https://sourceware.org/git/binutils-gdb.git
 # GNU C Library (glibc) – used by most “normal” systems
 bminor/glibc
 # musl – used by Alpine and many minimal / embedded systems
