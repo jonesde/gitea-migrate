@@ -1,0 +1,96 @@
+# Self-hosted infrastructure services
+# nginx, Asterisk, Nextcloud (+ Collabora), Coolify, Jami,
+# reverse proxies, and defensive hardening (Tier 1 + Tier 2)
+#
+# Purpose: offline Gitea mirror + local reference for AI coding agents
+#
+# Formats: owner/repo (GitHub) | https://host/owner/repo | https://host/owner/repo.git
+#
+# Notes:
+#   - nginx "extensions" are usually separate projects (NPM, OpenResty), not in-tree plugins
+#   - Nextcloud extensions are primarily apps under the nextcloud/ org
+#   - Jami upstream is often git.jami.net; GitHub mirrors are fine for archiving
+#   - Collabora Online is the office stack here (not Libre/OpenOffice)
+#   - Hardening: CrowdSec is the modern edge IPS; keep fail2ban for simple host jails
+
+# ============================================================
+# HTTP reverse proxy / web front doors
+# ============================================================
+nginx/nginx                              # nginx core (web server, reverse proxy, cache)
+NginxProxyManager/nginx-proxy-manager    # UI for nginx proxy hosts + TLS certs
+nginx-proxy/nginx-proxy                  # Automated nginx proxy for Docker containers
+caddyserver/caddy                        # Caddy — automatic HTTPS, simple config
+traefik/traefik                          # Traefik — Docker/Coolify-friendly proxy
+certbot/certbot                          # Let's Encrypt / ACME client (nginx path)
+
+# ============================================================
+# Telephony / real-time communications
+# ============================================================
+asterisk/asterisk                        # Asterisk PBX core
+coturn/coturn                            # TURN/STUN server (Nextcloud Talk, WebRTC, Jami media)
+
+# Jami (distributed P2P voice/video/chat)
+# Umbrella + core pieces; mobile clients optional
+savoirfairelinux/jami-project            # Build orchestration / umbrella
+savoirfairelinux/jami-daemon             # Core daemon / library
+savoirfairelinux/jami-client-qt          # Desktop Qt client
+savoirfairelinux/jami-client-android     # Android client
+savoirfairelinux/jami-nameservice        # Username → Jami ID name service
+
+# ============================================================
+# Nextcloud + Collabora Online (office without Libre/OpenOffice)
+# ============================================================
+nextcloud/server                         # Nextcloud server core
+nextcloud/all-in-one                     # Official AIO deployment method
+nextcloud/spreed                         # Talk (chat / video)
+nextcloud/deck                           # Kanban boards
+nextcloud/notes                          # Notes app
+nextcloud/calendar                       # Calendar
+nextcloud/contacts                       # Contacts
+nextcloud/bookmarks                      # Bookmarks
+nextcloud/richdocuments                  # Nextcloud Office — Collabora connector app
+CollaboraOnline/online                   # Collabora Online server (CODE/Online)
+
+# ============================================================
+# App platform / PaaS-style self-hosting
+# ============================================================
+coollabsio/coolify                       # Coolify — self-hosted Heroku/Netlify/Vercel-style PaaS
+
+# ============================================================
+# Tier 1 hardening — high efficacy for exposed self-host stacks
+# ============================================================
+# Practical pattern:
+#   1) WireGuard for admin/management access (shrink public surface)
+#   2) Caddy or nginx + CrowdSec bouncer on the public edge
+#   3) Authentik (or Authelia) for app SSO
+#   4) fail2ban for simple daemon jails CrowdSec does not cover
+#   5) Vaultwarden for credentials
+
+crowdsecurity/crowdsec                   # Collaborative IPS — scenarios + shared signals + bouncers
+                                         # Often the best fail2ban upgrade at a reverse-proxy edge
+fail2ban/fail2ban                        # Classic log-based IP bans (SSH and simple services)
+goauthentik/authentik                    # SSO / IdP (full-featured)
+Authelia/authelia                        # Lighter SSO / portal auth alternative
+dani-garcia/vaultwarden                  # Bitwarden-compatible password manager
+WireGuard/wireguard-tools                # WireGuard userspace tools
+WireGuard/wireguard-linux                # WireGuard kernel components (full source if desired)
+
+# ============================================================
+# Tier 2 hardening — monitoring, scanning, deeper defense
+# ============================================================
+# Add when Tier 1 is solid and you have capacity to tune/operate these.
+
+wazuh/wazuh                              # SIEM / host IDS / FIM / vulnerability visibility (heavier)
+OISF/suricata                            # Network IDS/IPS (tune carefully; can be noisy)
+Cisco-Talos/clamav                       # Malware scanning (mail, uploads, file shares)
+CISOfy/lynis                             # Host audit / hardening checklist generator
+
+# ============================================================
+# Optional neighbors (commented; include if you expand scope)
+# ============================================================
+# openresty/openresty                    # nginx + Lua (advanced edge scripting)
+# portainer/portainer                    # Docker management UI
+# dokku/dokku                            # Heroku-like PaaS on your own host
+# docker-mailserver/docker-mailserver    # Full mail stack (larger operational burden)
+# mailcow/mailcow-dockerized             # Alternative mail stack
+
