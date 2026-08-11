@@ -1,0 +1,36 @@
+# CAD, CAM, slicing, laser & CNC software
+# Open-source tools for design, 3D printing, electronics, laser, and CNC.
+
+# ============================================================
+# CAD / 3D modeling
+# ============================================================
+FreeCAD/FreeCAD                       # Parametric CAD (includes CAM/Path workbench)
+blender/blender                       # Mesh / visual 3D modeling (official GitHub mirror)
+openscad/openscad                     # Programmatic / script-based CAD
+solvespace/solvespace                 # Lightweight parametric 2D/3D CAD
+
+# ============================================================
+# 3D printer slicers
+# ============================================================
+OrcaSlicer/OrcaSlicer                 # Current community favorite (Klipper, Voron, Bambu, etc.)
+prusa3d/PrusaSlicer                   # Excellent all-rounder, strong Prusa support
+
+# ============================================================
+# Electronics / PCB
+# ============================================================
+https://gitlab.com/kicad/code/kicad.git   # KiCad (official development on GitLab)
+
+# ============================================================
+# Laser control
+# ============================================================
+arkypita/LaserGRBL                    # Popular free GRBL laser software (Windows-focused)
+LaserWeb/LaserWeb4                    # Open-source browser-based laser/CNC control
+
+# ============================================================
+# CNC control & motion firmware
+# ============================================================
+LinuxCNC/linuxcnc                     # Full open-source CNC machine control
+Denvi/Candle                          # GRBL controller + G-code visualizer
+gnea/grbl                             # Classic GRBL (Arduino)
+grblHAL/core                          # Modern 32-bit GRBL (grblHAL)
+
