@@ -1,0 +1,62 @@
+# MCU / 3D-printer / ESP32 firmware & tooling
+# Covers BigTreeTech boards you have, Klipper/Marlin ecosystem,
+# ESP32 development, flashing utilities, and common host-side tools.
+
+# ============================================================
+# Core 3D-printer firmware
+# ============================================================
+Klipper3d/klipper
+MarlinFirmware/Marlin
+MarlinFirmware/Configurations
+Arksine/katapult                      # CanBoot / Katapult bootloader (CAN + USB)
+
+# ============================================================
+# BigTreeTech boards & modules (your hardware)
+# ============================================================
+# Mainboards
+bigtreetech/Manta-M8P                 # Manta M8P (includes V2.0)
+bigtreetech/BIGTREETECH-OCTOPUS-Pro   # Octopus Pro V1.0
+
+# CAN / toolhead / adapter
+bigtreetech/U2C                       # U2C V2.1 (USB-to-CAN)
+bigtreetech/EBB                       # EBB SB2209 CAN V1.0 and related EBB boards
+
+# Displays
+bigtreetech/BIGTREETECH-TouchScreenFirmware   # TFT35 E3 V3.0 / V3.0.1 and most BTT TFTs
+bigtreetech/BTT-TFT35-E3-V3.0                 # TFT35 E3 V3.0 specific
+bigtreetech/BIGTREETECH-TouchScreenHardware  # HDMI5 V1.2, 5"/7" HDMI screens hardware
+
+# BTT general docs
+bigtreetech/docs
+
+# ============================================================
+# Klipper host ecosystem (Pi / CB1 / host side)
+# ============================================================
+Arksine/moonraker
+mainsail-crew/mainsail
+fluidd-core/fluidd
+KlipperScreen/KlipperScreen           # especially useful with HDMI touchscreens
+dw-0/kiauh                            # Klipper Installation And Update Helper
+
+# ============================================================
+# CAN / USB-CAN extras
+# ============================================================
+candle-usb/candleLight_fw
+bigtreetech/candleLight_fw            # BTT STM32G0 support branch used on U2C V2.x
+
+# ============================================================
+# ESP32 development stack
+# ============================================================
+espressif/esp-idf                     # Official Espressif IoT Development Framework
+espressif/arduino-esp32               # Arduino core for ESP32
+espressif/esptool                     # Primary ESP32/ESP8266 flashing tool
+platformio/platform-espressif32       # PlatformIO ESP32 platform
+platformio/platformio-core            # PlatformIO core (handy for offline work)
+
+# ============================================================
+# Flashing & low-level tools
+# ============================================================
+openocd-org/openocd                   # JTAG/SWD debug & flash
+# dfu-util and stm32flash are normally installed as system packages;
+# source mirrors can be added later if desired for fully offline builds.
+
