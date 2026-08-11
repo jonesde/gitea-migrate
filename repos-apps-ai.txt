@@ -1,0 +1,23 @@
+# Apps, editors, agents, and local LLM runtimes
+
+# ============================================================
+# Desktop / general tools
+# ============================================================
+https://gitlab.gnome.org/GNOME/dia.git    # Dia diagram editor (upstream)
+# GNOME/dia                                # GitHub mirror of Dia
+zed-industries/zed                        # Zed editor
+# TOO BIG, needs special handling: chromium/chromium                         # Chromium (GitHub mirror; very large)
+# Official Chromium: https://chromium.googlesource.com/chromium/src
+
+# ============================================================
+# AI coding / agent tools
+# ============================================================
+anomalyco/opencode                        # OpenCode – open source coding agent
+earendil-works/pi                         # Pi agent (pi.dev)
+NousResearch/hermes-agent                 # Hermes agent (Nous Research)
+
+# ============================================================
+# Local LLM inference
+# ============================================================
+ggml-org/llama.cpp                        # llama.cpp
+vllm-project/vllm                         # vLLM
