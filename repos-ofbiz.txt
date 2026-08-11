@@ -1,0 +1,5 @@
+# Apache OFBiz ecosystem
+apache/ofbiz-framework
+apache/ofbiz-plugins
+apache/ofbiz-tools
+apache/ofbiz-site

@@ -1,0 +1,116 @@
+# Moqui first-level deps
+apache/groovy
+eclipse/jetty.project
+apache/logging-log4j2
+h2database/h2database
+vsch/flexmark-java
+apache/shiro
+FasterXML/jackson-core
+apache/commons-csv
+apache/commons-collections
+freemarker/freemarker
+snakeyaml/snakeyaml
+apache/commons-io
+apache/commons-validator
+apache/commons-codec
+hierynomus/sshj
+jhy/jsoup
+davidmoten/subethasmtp
+apache/commons-fileupload
+apache/commons-logging
+eclipse-ee4j/angus-mail
+apache/commons-email
+eclipse-ee4j/angus-activation
+hazelcast/hazelcast
+kiegroup/drools
+orientechnologies/orientdb
+apache/poi
+apache/xmlgraphics-fop
+apache/plc4x
+apache/pdfbox
+pac4j/pac4j
+apache/mina-sshd
+
+# OpenSearch server, plugins, SDKs, docs
+# Core
+opensearch-project/OpenSearch
+opensearch-project/ml-commons
+# Major plugins
+opensearch-project/cross-cluster-replication
+opensearch-project/sql
+opensearch-project/data-prepper
+opensearch-project/index-management
+opensearch-project/security
+opensearch-project/neural-search
+opensearch-project/alerting
+opensearch-project/performance-analyzer
+opensearch-project/security-analytics
+opensearch-project/anomaly-detection
+opensearch-project/asynchronous-search
+opensearch-project/k-NN
+opensearch-project/opensearch-migrations
+# SQL ecosystem
+opensearch-project/sql-cli
+opensearch-project/sql-jdbc
+opensearch-project/sql-odbc
+opensearch-project/piped-processing-language
+# Other plugins
+opensearch-project/geospatial
+opensearch-project/search-relevance
+opensearch-project/job-scheduler
+opensearch-project/time-series-db
+opensearch-project/common-utils
+opensearch-project/remote-vector-index-builder
+opensearch-project/opensearch-jvector
+opensearch-project/flow-framework
+opensearch-project/opensearch-olap
+opensearch-project/simple-schema
+opensearch-project/search-processor
+opensearch-project/custom-codecs
+opensearch-project/query-insights
+opensearch-project/opensearch-storage-encryption
+opensearch-project/opensearch-prometheus-exporter
+opensearch-project/opensearch-traffic-gateway
+opensearch-project/maps
+opensearch-project/user-behavior-insights
+opensearch-project/performance-analyzer-rca
+opensearch-project/performance-analyzer-commons
+opensearch-project/opensearch-spark
+opensearch-project/cluster-etcd
+opensearch-project/neural-sparse-cpp
+opensearch-project/opensearch-agent-skills
+opensearch-project/opensearch-agent-server
+opensearch-project/opensearch-cli
+opensearch-project/opensearch-launchpad
+opensearch-project/opensearch-system-templates
+opensearch-project/skills
+opensearch-project/opensearch-oci-object-storage
+# Client SDKs
+opensearch-project/opensearch-java
+opensearch-project/opensearch-py
+opensearch-project/opensearch-go
+opensearch-project/opensearch-js
+opensearch-project/opensearch-net
+opensearch-project/opensearch-net-abstractions
+opensearch-project/opensearch-php
+opensearch-project/opensearch-ruby
+opensearch-project/opensearch-rs
+opensearch-project/opensearch-py-ml
+opensearch-project/opensearch-hadoop
+opensearch-project/logstash-output-opensearch
+opensearch-project/logstash-input-opensearch
+opensearch-project/spring-data-opensearch
+opensearch-project/opensearch-protobufs
+opensearch-project/opensearch-sdk-java
+opensearch-project/opensearch-sdk-py
+opensearch-project/opensearch-remote-metadata-sdk
+# Docs
+opensearch-project/documentation-website
+
+# OpenJDK
+openjdk/jdk
+
+# Jakarta EE spec APIs — only those with GitHub repos
+eclipse-ee4j/jakartaee-api
+eclipse-ee4j/common-annotations-api
+eclipse-ee4j/jws-api

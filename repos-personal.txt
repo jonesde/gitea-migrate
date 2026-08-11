@@ -1,0 +1,14 @@
+# User jonesde public repositories
+# Formats: owner/repo (GitHub) | https://host/owner/repo | https://host/owner/repo.git
+jonesde/btm
+https://github.com/jonesde/coarchy
+https://github.com/jonesde/CSSBoxPdf.git
+jonesde/grok-the-rock
+jonesde/high-vs-low
+jonesde/home-scale
+jonesde/http-vue-loader
+jonesde/lol-ya-tdg
+jonesde/moqui-quasar-custom
+jonesde/moqui-runtime-angular
+jonesde/OFBizMigrate
+jonesde/OFBizToMantle
