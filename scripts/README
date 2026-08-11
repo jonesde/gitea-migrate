@@ -1,0 +1,8 @@
+
+# Path A – classic Debian GNOME live image
+./build-live-gnome.sh
+
+# Path B – GNOME OS / BuildStream
+./build-gnome-os.sh                  # default = vm/image.bst
+./build-gnome-os.sh core/gnome-shell.bst   # lighter target for testing
+

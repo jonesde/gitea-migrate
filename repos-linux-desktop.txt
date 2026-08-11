@@ -1,0 +1,76 @@
+# Basic but complete GNOME desktop OS (Debian package manager oriented)
+# Includes core desktop, utilities, display, drivers, systemd, containers,
+# and reference build systems.
+
+# ============================================================
+# Reference / build systems for a full desktop
+# ============================================================
+GNOME/gnome-build-meta
+https://salsa.debian.org/live-team/live-build.git
+
+# ============================================================
+# Debian package management
+# ============================================================
+Debian/apt
+https://salsa.debian.org/dpkg-team/dpkg.git
+
+# ============================================================
+# systemd
+# ============================================================
+systemd/systemd
+
+# ============================================================
+# GNOME core desktop
+# ============================================================
+GNOME/gnome-shell
+GNOME/mutter
+GNOME/gdm
+GNOME/gtk
+GNOME/glib
+GNOME/gnome-session
+GNOME/gnome-settings-daemon
+GNOME/gnome-control-center
+
+# Basic GNOME UI utilities
+GNOME/nautilus
+GNOME/gnome-terminal
+GNOME/gnome-text-editor
+GNOME/gnome-software
+GNOME/evince
+GNOME/eog
+
+# ============================================================
+# Display / graphics stack
+# ============================================================
+# Wayland
+https://gitlab.freedesktop.org/wayland/wayland.git
+https://gitlab.freedesktop.org/wayland/wayland-protocols.git
+
+# Mesa (AMD, Intel, Nouveau and other open-source GPU drivers)
+https://gitlab.freedesktop.org/mesa/mesa.git
+
+# ============================================================
+# Audio / video (modern GNOME default)
+# ============================================================
+https://gitlab.freedesktop.org/pipewire/pipewire.git
+https://gitlab.freedesktop.org/pipewire/wireplumber.git
+
+# ============================================================
+# Command-line essentials
+# ============================================================
+openssh/openssh-portable
+vim/vim
+https://git.savannah.gnu.org/git/bash.git
+https://git.savannah.gnu.org/git/coreutils.git
+https://github.com/util-linux/util-linux.git
+
+# ============================================================
+# Container management
+# ============================================================
+containers/podman
+containers/buildah
+containers/skopeo
+opencontainers/runc
+containerd/containerd
+moby/moby
+
