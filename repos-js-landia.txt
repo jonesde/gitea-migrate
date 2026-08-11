@@ -26,6 +26,7 @@ npm/cli                              # npm CLI (classic Node package manager)
 yarnpkg/berry                        # Yarn modern (Berry / Yarn 2+)
 pnpm/pnpm                            # pnpm (content-addressable, disk-efficient)
 oven-sh/bun                          # Bun runtime + package manager (larger)
+# Warning: estimated ~2GB, large but not handled as special case like the 40-50GB chromium
 nodejs/node                          # Node.js itself (large; optional if you only need libs)
 microsoft/TypeScript                 # TypeScript compiler (moderately large)
 
@@ -74,7 +75,20 @@ gkjohnson/three-mesh-bvh             # BVH for fast raycasting & spatial queries
 gkjohnson/three-bvh-csg              # Constructive solid geometry on three-mesh-bvh
 
 # Post-processing / effects
-pmndrs/postprocessing                # Postprocessing stack (vanilla + R3F-friendly)
+pmndrs/postprocessing                # Postprocessing # ============================================================
+# WASM / bindings toolchain + Rapier foundations
+# ============================================================
+# Rapier JS bindings are in dimforge/rapier (typescript/); these support
+# rebuilding WASM packages and understanding the physics stack.
+
+dimforge/nalgebra                    # Linear algebra used by Rapier
+dimforge/parry                       # Collision-detection used by Rapier
+
+wasm-bindgen/wasm-bindgen            # Rust ↔ JavaScript bindings
+wasm-bindgen/wasm-pack               # Build/publish Rust WASM as JS packages
+WebAssembly/binaryen                 # wasm-opt / WASM optimization
+WebAssembly/wabt                     # WebAssembly binary toolkit
+emscripten-core/emscripten           # C/C++ → WASM (Emscripten)stack (vanilla + R3F-friendly)
 
 # Animation / debug UI often paired with Three
 tweenjs/tween.js                     # Tween animations
