@@ -1,0 +1,81 @@
+# Linux kernel + minimal working distribution variations
+# Goal: enough to understand, rebuild, and experiment with
+# kernel + Buildroot, Yocto/Poky, BusyBox, Alpine, and LFS paths,
+# plus bootloaders, container tooling, and core toolchain.
+
+# ============================================================
+# Kernel
+# ============================================================
+torvalds/linux
+
+# ============================================================
+# 1. Buildroot – primary “core build” / embedded generator
+# ============================================================
+buildroot/buildroot
+
+# ============================================================
+# 2. Yocto / Poky – more powerful embedded distribution builder
+#    (modern layout uses the separate components)
+# ============================================================
+openembedded/bitbake
+openembedded/openembedded-core
+yoctoproject/meta-yocto
+# Optional but commonly used extra layers:
+openembedded/meta-openembedded
+
+# ============================================================
+# 3. BusyBox-centric minimal system
+# ============================================================
+vda-linux/busybox_mirror          # Official GitHub mirror of BusyBox
+# Alt: mirror/busybox
+
+# ============================================================
+# 4. Alpine Linux variation (real-world small production distro)
+# ============================================================
+alpinelinux/aports                # All package build recipes (APKBUILDs)
+# Core building blocks Alpine is based on:
+#   - BusyBox (listed above)
+#   - musl (listed in toolchain section below)
+
+# ============================================================
+# 5. Linux From Scratch (educational / pure from-source path)
+# ============================================================
+lfs-book/lfs                      # LFS book (read-only mirror)
+lfs-book/blfs                     # Beyond Linux From Scratch (optional but very useful)
+lfs-book/make-ca                  # Certificate Authority helper used by LFS
+
+# ============================================================
+# Bootloaders
+# ============================================================
+u-boot/u-boot                     # Primary for Yocto, Buildroot, embedded, many BusyBox systems
+rhboot/grub2                      # GRUB 2 (widely used, including Alpine UEFI)
+# Note: Syslinux is Alpine’s traditional lightweight BIOS/ISO bootloader;
+#       source is mainly at repo.or.cz (can add a mirror later if desired)
+
+# ============================================================
+# Container infrastructure
+# (enough to build Alpine-style images and run containers)
+# ============================================================
+containers/podman                 # Daemonless container engine (build + run)
+containers/buildah                # Specialized image builder
+containers/skopeo                 # Inspect / copy / sync images
+opencontainers/runc               # Low-level OCI runtime
+containerd/containerd             # Industry-standard container runtime
+# Optional classic Docker / Moby stack for compatibility:
+moby/moby
+
+# ============================================================
+# Core toolchain & C libraries
+# (needed to actually compile the systems above)
+# ============================================================
+# GCC – primary compiler for kernel, U-Boot, Buildroot, Yocto, LFS, etc.
+# Official is gcc.gnu.org; convenient mirrors exist, e.g.:
+gcc-mirror/gcc
+# Binutils (+ GDB)
+bminor/binutils-gdb
+# GNU C Library (glibc) – used by most “normal” systems
+bminor/glibc
+# musl – used by Alpine and many minimal / embedded systems
+# Official: git.musl-libc.org ; convenient GitHub mirrors exist, e.g.:
+kraj/musl
+
