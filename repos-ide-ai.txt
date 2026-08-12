@@ -20,6 +20,7 @@ NousResearch/hermes-agent                 # Hermes agent (Nous Research)
 # ============================================================
 ggml-org/llama.cpp                        # llama.cpp
 vllm-project/vllm                         # vLLM
+unslothai/unsloth                         # Unsloth
 
 # ============================================================
 # ============================================================
