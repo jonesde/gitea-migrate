@@ -31,3 +31,12 @@ V1EngineeringInc/V1EngineeringInc-Docs  # Main documentation (docs.v1e.com)
 V1EngineeringInc/FluidNC_Configs      # FluidNC configs for V1 boards
 V1EngineeringInc/MarlinBuilder        # Pre-configured Marlin builds
 
+# ============================================================
+# 3D Scanning & Imaging
+# ============================================================
+OpenScan-org/OpenScan3
+OpenScan-org/OpenScan3-Client
+OpenScan-org/OpenScan-Design
+OpenScan-org/OpenScan-Doc
+Open-Lab-Starter-Kit/OLSK-3D-Scanner
+Open-Lab-Starter-Kit/OLSK-Electronics
