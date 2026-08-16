@@ -141,6 +141,43 @@ ACINQ/eclair                             # Eclair (Scala)
 lightningdevkit/rust-lightning           # LDK / rust-lightning
 
 # ============================================================
+# Parallel Internet, etc
+# ============================================================
+# --- Reticulum ---
+markqvist/reticulum
+markqvist/NomadNet
+markqvist/Sideband
+markqvist/RNode_Firmware
+markqvist/LoRaMon
+markqvist/LXST
+markqvist/LXMF
+SebastianObi/LXMF-Tools
+markqvist/OpenModem
+markqvist/tncattach
+markqvist/LibAPRS
+markqvist/rnview
+acehoss/rnsh
+liamcottle/reticulum-meshchat
+liamcottle/rnode-flasher
+
+# --- microReticulum ---
+attermann/microReticulum             # C++ port of Reticulum Net Stack
+attermann/microReticulum_Firmware    # fork of markqvist/RNode_Firmware
+attermann/ReticulumAPI               # Reticulum REST & Websocket API in Python
+attermann/reticulum-mcu
+attermann/microStore
+attermann/microCask
+torlando-tech/microLXMF
+
+# --- Codec2 Speech Codec ---
+drowe67/codec2
+
+# --- Mercury, Hermes Radio ---
+Rhizomatica/mercury
+Rhizomatica/mercury-client
+Rhizomatica/hermes-net
+
+# ============================================================
 # Expansion checklist (non-git / inconvenient-as-git)
 # ============================================================
 # [ ] Bulk RFC corpus from rfc-editor.org (text + XML preferred)
