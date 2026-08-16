@@ -1,0 +1,21 @@
+
+# --- Zim Tools ---
+openzim/libzim
+openzim/zim-tools
+openzim/python-libzim
+openzim/cms
+
+# --- Kiwix ---
+kiwix/libkiwix
+kiwix/java-libkiwix
+kiwix/kiwix-tools
+kiwix/kiwix-js
+kiwix/kiwix-js-pwa
+
+# --- Scrapers, etc ---
+openzim/python-scraperlib
+openzim/gutenberg
+
+# --- Books and General Info on GitHub ---
+markqvist/Parallel_Polis
+pholmq/Tychosbook
