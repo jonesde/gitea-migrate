@@ -5,6 +5,7 @@
 # ============================================================
 https://gitlab.gnome.org/GNOME/dia.git    # Dia diagram editor (upstream)
 # GNOME/dia                                # GitHub mirror of Dia
+LadybirdBrowser/ladybird                   # Ladybird Independent Browser
 # TOO BIG, needs special handling: chromium/chromium                         # Chromium (GitHub mirror; very large)
 # Official Chromium: https://chromium.googlesource.com/chromium/src
 
@@ -14,13 +15,17 @@ https://gitlab.gnome.org/GNOME/dia.git    # Dia diagram editor (upstream)
 anomalyco/opencode                        # OpenCode – open source coding agent
 earendil-works/pi                         # Pi agent (pi.dev)
 NousResearch/hermes-agent                 # Hermes agent (Nous Research)
+markqvist/lc                              # Humanity's Last Command
+markqvist/chatterbox_tts
 
 # ============================================================
-# Local LLM inference
+# Local LLM inference and training
 # ============================================================
 ggml-org/llama.cpp                        # llama.cpp
 vllm-project/vllm                         # vLLM
 unslothai/unsloth                         # Unsloth
+markqvist/ember                           # Offline-First Generative Learning Environment
+THU-MAIC/OpenMAIC                         # Multi-Agent Interactive Classroom
 
 # ============================================================
 # ============================================================
