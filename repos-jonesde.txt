@@ -12,3 +12,4 @@ jonesde/moqui-quasar-custom
 jonesde/moqui-runtime-angular
 jonesde/OFBizMigrate
 jonesde/OFBizToMantle
+jonesde/unforgettable
