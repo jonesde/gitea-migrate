@@ -62,3 +62,8 @@ Stefan-Schmidt/dfu-util
 # Upstream: https://git.code.sf.net/p/stm32flash/code
 https://gitlab.com/stm32flash/stm32flash.git
 
+# ============================================================
+# Zephyr RTOS
+# ============================================================
+zephyrproject-rtos/zephyr
+zephyrproject-rtos/sdk-ng

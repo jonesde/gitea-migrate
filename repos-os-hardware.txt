@@ -40,3 +40,8 @@ OpenScan-org/OpenScan-Design
 OpenScan-org/OpenScan-Doc
 Open-Lab-Starter-Kit/OLSK-3D-Scanner
 Open-Lab-Starter-Kit/OLSK-Electronics
+
+# ============================================================
+# Misc/Other/Etc
+# ============================================================
+femtofox/femtofox          # pi-sized computer with LoRa radio
