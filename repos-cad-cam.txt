@@ -34,3 +34,22 @@ Denvi/Candle                          # GRBL controller + G-code visualizer
 gnea/grbl                             # Classic GRBL (Arduino)
 grblHAL/core                          # Modern 32-bit GRBL (grblHAL)
 
+# ============================================================
+# 3D Scanning/Reconstruction
+# ============================================================
+isl-org/open3d                        # 3D model reconstruction from images, etc
+isl-org/Open3D-ML                     # ML extensions
+
+# ============================================================
+# Major Dependencies
+# ============================================================
+# --- Open3D dependencies ---
+isl-org/Open3D-PoissonRecon           # isl-org fork with changes
+qhull/qhull                           # Convex hull, Delaunay triangulation, Voronoi diagrams, Halfspace intersection
+glfw/glfw                             # Library for OpenGL, OpenGL ES and Vulkan application development
+google/filament                       # Physically based rendering engine for Android, iOS, Linux, macOS, Windows, WASM
+ocornut/imgui                         # 3D app GUI library for C++
+pybind/pybind11
+https://gitlab.com/libeigen/eigen     # Library for linear algebra: matrices, vectors, numerical solvers, etc
+uxlfoundation/oneTBB                  # Thread mgmt lib for C++
+flann-lib/flann                       # Fast Library for Approximate Nearest Neighbors
