@@ -27,6 +27,19 @@ unslothai/unsloth                         # Unsloth
 markqvist/ember                           # Offline-First Generative Learning Environment
 THU-MAIC/OpenMAIC                         # Multi-Agent Interactive Classroom
 
+# --- PyTorch, common deps ---
+pytorch/pytorch                           # PyTorch: base lib, common dependency
+onnx/onnx                                 # Open Neural Network Exchange format handling
+google/protobuf                           # Serialization library used heavily by ONNX
+google/googletest                         # C++ testing framework required for building the backend
+pybind/pybind11                           # Exposes PyTorch's underlying C++ backend (ATen library) to Python
+facebookincubator/gloo                    # Multi-device collective communication library used for distributed multi-GPU training (torch.distributed)
+intel/mkl-dnn                             # (OneDNN): Intel's deep learning network library for CPU optimization
+OpenMathLib/OpenBLAS                      # Basic Linear Algebra Subprograms library based on GotoBLAS2 1.13 BSD
+icl-utk-edu/magma                         # MAGMA - Matrix Algebra on GPU and Multicore Architectures
+kjbartel/clmagma                          # OpenCL MAGMA
+
+
 # ============================================================
 # ============================================================
 # Zed editor + extensions
