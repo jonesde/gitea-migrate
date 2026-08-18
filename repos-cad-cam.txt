@@ -35,6 +35,21 @@ gnea/grbl                             # Classic GRBL (Arduino)
 grblHAL/core                          # Modern 32-bit GRBL (grblHAL)
 
 # ============================================================
+# Quantum Computation
+# ============================================================
+qutip/qutip
+qutip/qutip-tutorials
+qutip/qutip-qip
+qutip/qutip-qoc
+qutip/qutip-qtrl
+numpy/numpy
+numpy/numpy-tutorials
+scipy/scipy
+scipy/scipy-stubs
+cython/cython
+matplotlib/matplotlib
+
+# ============================================================
 # 3D Scanning/Reconstruction
 # ============================================================
 isl-org/open3d                        # 3D model reconstruction from images, etc
