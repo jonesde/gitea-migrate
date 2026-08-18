@@ -178,7 +178,20 @@ drowe67/codec2
 # --- Mercury, Hermes Radio ---
 Rhizomatica/mercury
 Rhizomatica/mercury-client
+Rhizomatica/mercury-qt
+Rhizomatica/hermes-api
+Rhizomatica/hermes-backend
+Rhizomatica/hermes-broadcast
+Rhizomatica/hermes-documentation
+Rhizomatica/hermes-frontend
+Rhizomatica/hermes-gui
+Rhizomatica/hermes-install
 Rhizomatica/hermes-net
+Rhizomatica/hermes-radio-daemon
+Rhizomatica/skywave
+Rhizomatica/ffaudio
+RFnexus/modem73
+JS8Call-improved/JS8Call-improved
 
 # ============================================================
 # Expansion checklist (non-git / inconvenient-as-git)
