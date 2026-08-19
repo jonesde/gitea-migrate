@@ -40,12 +40,6 @@ icl-utk-edu/magma                         # MAGMA - Matrix Algebra on GPU and Mu
 kjbartel/clmagma                          # OpenCL MAGMA
 
 # ============================================================
-# AI General Info, Tools
-# ============================================================
-google-deepmind/deepmind-research
-google-deepmind/acme
-
-# ============================================================
 # ============================================================
 # Zed editor + extensions
 # For offline mirror / Gitea archive and local AI-agent reference

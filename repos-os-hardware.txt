@@ -61,6 +61,7 @@ ros-controls/zephyr-zenoh-integration
 ros-controls/mujoco_ros2_control
 # --- Mujoco ---
 google-deepmind/mujoco
+google-deepmind/mujoco_warp
 google-deepmind/mujoco_menagerie
 google-deepmind/mujoco_mpc
 google-deepmind/mujoco_playground
