@@ -42,6 +42,37 @@ Open-Lab-Starter-Kit/OLSK-3D-Scanner
 Open-Lab-Starter-Kit/OLSK-Electronics
 
 # ============================================================
+# Robot Control - ROS, LeRobot, etc
+# ============================================================
+# --- ROS ---
+ros2/ros2
+ros2/ros2_documentation
+ros-controls/ros2_control
+ros-controls/ros2_controllers
+ros-controls/ros2_control_demos
+ros-controls/control_toolbox
+ros-controls/zephyr-zenoh-integration
+# --- Mujoco ---
+google-deepmind/mujoco
+google-deepmind/mujoco_menagerie
+google-deepmind/mujoco_mpc
+google-deepmind/mujoco_playground
+google/filament
+glfw/glfw
+ocornut/imgui
+ros-controls/mujoco_ros2_control
+qhull/qhull
+# --- LeRobot ---
+huggingface/lerobot
+Tavish9/any4lerobot
+TheRobotStudio/SO-ARM100
+TheRobotStudio/HOPEJr
+TheRobotStudio/V1.0-Dexhand
+TheRobotStudio/robot-nano-hand
+geaxgx/depthai_hand_tracker
+ycheng517/lerobot-ros
+
+# ============================================================
 # Misc/Other/Etc
 # ============================================================
 femtofox/femtofox          # pi-sized computer with LoRa radio
