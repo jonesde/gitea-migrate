@@ -39,6 +39,11 @@ OpenMathLib/OpenBLAS                      # Basic Linear Algebra Subprograms lib
 icl-utk-edu/magma                         # MAGMA - Matrix Algebra on GPU and Multicore Architectures
 kjbartel/clmagma                          # OpenCL MAGMA
 
+# ============================================================
+# AI General Info, Tools
+# ============================================================
+google-deepmind/deepmind-research
+google-deepmind/acme
 
 # ============================================================
 # ============================================================
