@@ -46,22 +46,33 @@ Open-Lab-Starter-Kit/OLSK-Electronics
 # ============================================================
 # --- ROS ---
 ros2/ros2
+ros2/rcl
+ros2/rclcpp
+ros2/rclpy
+ros2/rmw
+ros2/ros1_bridge
 ros2/ros2_documentation
+ros2/examples
 ros-controls/ros2_control
 ros-controls/ros2_controllers
 ros-controls/ros2_control_demos
 ros-controls/control_toolbox
 ros-controls/zephyr-zenoh-integration
+ros-controls/mujoco_ros2_control
 # --- Mujoco ---
 google-deepmind/mujoco
 google-deepmind/mujoco_menagerie
 google-deepmind/mujoco_mpc
 google-deepmind/mujoco_playground
 google/filament
+google/googletest
+abseil/abseil-cpp
 glfw/glfw
 ocornut/imgui
-ros-controls/mujoco_ros2_control
 qhull/qhull
+tinyobjloader/tinyobjloader
+syoyo/tinygltf
+leethomason/tinyxml2
 # --- LeRobot ---
 huggingface/lerobot
 Tavish9/any4lerobot
