@@ -21,6 +21,9 @@ VoronDesign/Voron-0                   # Voron 0
 VoronDesign/Voron-Stealthburner       # Stealthburner toolhead
 VoronDesign/VoronUsers                # Community mods collection
 VoronDesign/Voron-Hardware            # Shared hardware / electronics files
+VoronDesign/Voron-Documentation
+VoronDesign/Voron-Extras
+VoronDesign/PrusaSlicer-settings-non-prusa-fff
 
 # ============================================================
 # V1 Engineering – MPCNC / LowRider CNC
