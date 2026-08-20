@@ -1,0 +1,58 @@
+
+# --- Lean Prover and Data ---
+leanprover/elan        # version manager, one way to get/run lean
+leanprover/lean4       # lang main
+leanprover/lean4-cli   # for lean that supports cli
+leanprover/lean-workbench
+leanprover/comparator
+leanprover/verso       # authoring tool for lean
+leanprover/verso-blueprint # lean blueprints in verso
+leanprover/verso-templates # templates for new verso projects
+leanprover/verso-slides # generate reveal.js slides from lean
+hakimel/reveal.js
+leanprover/subverso    # support older versions of Lean
+leanprover/nerodia     # write Python modules in Lean, lang-binding-ish
+leanprover/leansqlite  # Use SQLite in Lean
+leanprover/lean4export
+leanprover/doc-gen4
+leanprover/illuminate  # diagramming library, generates SVG
+
+leanprover-community/lean4web      # Web-based UI, Lean runs on server not in browser
+
+# LLM evaluator, pretty intense, many models get none... big ones a few, super recent ones like GPT 5.6 and Grok 4.6 getting in on the game, specialised/tuned models still better; when most models do this well... wow
+leanprover/lean-eval
+# Pantograph, like an agent harness for LLM to use Lean
+leanprover/Pantograph
+
+# Docs, Info
+leanprover/reference-manual
+leanprover/leagent                     # agent references, skills
+leanprover/theorem_proving_in_lean4    # code from the book, not the book
+leanprover/fp-lean                     # code from the book, not the book
+
+# Data Sets, etc
+leanprover/hex       # computational algebra library, just an index
+kim-em/hex-dev       # the real stuff for hex
+leanprover/cslib     # library of CS algos/tools
+leanprover/lean-kernel-arena
+leanprover/radar-bench-verso
+leanprover/downstream-lean4
+leanprover-community/mathlib4      # mathlib4, math algos in lean format
+leanprover-community/batteries
+leanprover-community/blog
+leanprover-community/iris-lean
+leanprover-community/lean-liquid
+
+
+# For a MASSIVE pile of repos, see:
+# https://github.com/leanprover/reservoir-index
+
+# Google Deepmind
+google-deepmind/superhuman  # superhuman problem set
+google-deepmind/acme        # reinforcement training/learning algos
+google-deepmind/deepmind-research
+
+# Other hands libs, etc
+jax-ml/jax
+numpy/numpy
+numpy/numpy-tutorials
