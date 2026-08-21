@@ -19,3 +19,8 @@ openzim/gutenberg
 # --- Books and General Info on GitHub ---
 markqvist/Parallel_Polis
 pholmq/Tychosbook
+
+# --- Other Archive Projects ---
+machdyne/ark   # General info archive
+machdyne/tc    # Timeless Computing
+machdyne/archiv  # Archival management tool

@@ -88,6 +88,33 @@ geaxgx/depthai_hand_tracker
 ycheng517/lerobot-ros
 
 # ============================================================
+# Embedded Devices
+# ============================================================
+# --- Long-term Storage, Machdyne
+machdyne/ferrit     # Digital Archive Platform for F-RAM chips
+machdyne/lakritz    # FPGA computer from Lone Dynamics
+machdyne/zeitlos    # SoC and OS
+machdyne/kakao      # linux distro for Lone Dynamics FPGA
+machdyne/basic      # mini Basic interpreter
+machdyne/te         # mini text editor, terminal based
+machdyne/kidgames   # mini games, terminal based
+
+machdyne/zwolf      # open MCU platform
+machdyne/wolfskralle  # ISP + spring contact programmer for CH32 MCUs and Zwolf LS10
+machdyne/kaltstahl  # storage device 256kB
+machdyne/blaustahl  # very small storage device (7,680 chars)
+machdyne/einszeit   # small security device
+machdyne/werkzeug   # USB multi-tool with UART, SPI, I2C, PMOD, GPIO
+machdyne/pico-dirtyJtag # Pico to JTAG cable, used in werkzeug
+raspberrypi/pico-sdk  # Main rasp-pi Pico SDK
+machdyne/katze      # Ethernet Pmod
+
+machdyne/topaz      # headless computer, w/ASIC based on KIAN-V RV32 SOC
+machdyne/kianRiscV  # KianV RISC-V design, forked from splinedrive/kianRiscV
+machdyne/linux-ch32v003  # Linux for RISC-V, fork of tvlad1234/linux-ch32v003
+machdyne/gf180mcu-kianv-pcb  # KianV PCB, fork of splinedrive/gf180mcu-kianv-pcb
+
+# ============================================================
 # Misc/Other/Etc
 # ============================================================
 femtofox/femtofox          # pi-sized computer with LoRa radio
