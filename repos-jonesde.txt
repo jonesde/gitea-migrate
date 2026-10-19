@@ -7,7 +7,7 @@ jonesde/grok-the-rock
 jonesde/high-vs-low
 jonesde/home-scale
 jonesde/http-vue-loader
-jonesde/lol-ya-tdg
+jonesde/ghigs-tdg
 jonesde/moqui-quasar-custom
 jonesde/moqui-runtime-angular
 jonesde/OFBizMigrate

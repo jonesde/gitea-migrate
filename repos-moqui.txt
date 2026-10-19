@@ -49,3 +49,10 @@ moqui/moqui-sftp
 moqui/moqui-sso
 moqui/moqui-wikitext
 moqui/start
+
+moqui/mr-moqui
+moqui/mr-mantle-udm
+moqui/mr-mantle-usl
+moqui/MrSimpleScreens
+moqui/MrMarbleERP
+moqui/ironstone-boss
