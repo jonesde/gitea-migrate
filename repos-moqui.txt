@@ -51,8 +51,6 @@ moqui/moqui-wikitext
 moqui/start
 
 moqui/mr-moqui
-moqui/mr-mantle-udm
-moqui/mr-mantle-usl
-moqui/MrSimpleScreens
-moqui/MrMarbleERP
-moqui/ironstone-boss
+moqui/mr-mantle
+moqui/mr-marble
+moqui/mr-boss
